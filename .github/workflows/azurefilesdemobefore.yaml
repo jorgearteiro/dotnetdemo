@@ -1,4 +1,4 @@
-name: azurefilesdemo
+name: azurefilesdemobefore
 "on":
     push:
         branches:
