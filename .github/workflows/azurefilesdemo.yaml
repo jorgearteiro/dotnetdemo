@@ -23,6 +23,6 @@ jobs:
               with:
                 dotnet-version: '6.x'
             - name: restore dotnet app
-              run: sudo dotnet restore
+              run: dotnet restore
             - name: Build dotnet app
-              run: sudo dotnet build
+              run: dotnet build
