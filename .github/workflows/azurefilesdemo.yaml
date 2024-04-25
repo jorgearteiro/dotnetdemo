@@ -22,5 +22,7 @@ jobs:
             - uses: actions/setup-dotnet@v4
               with:
                 dotnet-version: '6.x'
+            - name: restore dotnet app
+              run: dotnet restore
             - name: Build dotnet app
-              run: dotnet build dotnetdemo.csproj
+              run: dotnet build
