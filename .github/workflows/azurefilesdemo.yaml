@@ -23,6 +23,6 @@ jobs:
               with:
                 dotnet-version: '6.x'
             - name: restore dotnet app
-              run: dotnet restore --use-current-runtime --use-lock-file
+              run: dotnet restore dotnetdemo.csproj --use-current-runtime --use-lock-file
             - name: Build dotnet app
-              run: dotnet build
+              run: dotnet build dotnetdemo.csproj
