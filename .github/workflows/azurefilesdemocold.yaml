@@ -17,11 +17,11 @@ jobs:
               run: |
                 sudo apt-get update
                 sudo apt-get -y install curl            
-            - name: list nuget packages
-              run: ls ~/.nuget/packages/
-              shell: bash            
             - uses: actions/setup-dotnet@v4
               with:
                 dotnet-version: '6.x'
             - name: Build dotnet app
               run: dotnet build dotnetdemo.csproj
+            - name: list nuget packages
+              run: ls ~/.nuget/packages/
+              shell: bash   
