@@ -1,0 +1,27 @@
+name: azurefilesdemocold22
+"on":
+    push:
+        branches:
+            - main
+    workflow_dispatch: {}
+
+
+jobs:
+    build:
+        runs-on: arc-runner-set-cold22
+        env:
+          DOTNET_INSTALL_DIR: "./.dotnet"        
+        steps:
+            - uses: actions/checkout@v4
+            - name: Install cURL Headers
+              run: |
+                sudo apt-get update
+                sudo apt-get -y install curl            
+            - uses: actions/setup-dotnet@v4
+              with:
+                dotnet-version: '6.x'
+            - name: Build dotnet app
+              run: dotnet build dotnetdemo.csproj
+            - name: list nuget packages
+              run: ls ~/.nuget/packages/
+              shell: bash   
