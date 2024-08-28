@@ -5,13 +5,13 @@ name: dotnetdemo
             - main
     workflow_dispatch: {}
 env:
-    ACR_RESOURCE_GROUP: aks-demo
-    AZURE_CONTAINER_REGISTRY: cdacn
+    ACR_RESOURCE_GROUP: joarteir-aks-auto
+    AZURE_CONTAINER_REGISTRY: arteiroacr
     CHART_OVERRIDE_PATH: ./charts/values.yaml
-    CHART_OVERRIDES: image.repository=cdacn.azurecr.io/dotnetdemo,image.tag=${{ github.sha }}
+    CHART_OVERRIDES: image.repository=arteiroacr.azurecr.io/dotnetdemo,image.tag=${{ github.sha }}
     CHART_PATH: ./charts
-    CLUSTER_NAME: aks-course
-    CLUSTER_RESOURCE_GROUP: aks-course
+    CLUSTER_NAME: aks-auto
+    CLUSTER_RESOURCE_GROUP: joarteir-aks-auto
     CONTAINER_NAME: dotnetdemo
 jobs:
     buildImage:
